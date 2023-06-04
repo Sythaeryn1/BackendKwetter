@@ -26,6 +26,8 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
       working-directory: UserService
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-      working-directory: UserServiceTest
+      
+    - name: Setup VSTest
+      uses: darenm/Setup-VSTest@v1.2
+    - name: VSTest
+      run: vstest.console.exe /Platform:x64 .\test\sample.app.dll
