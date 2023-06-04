@@ -44,5 +44,7 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"Sythaeryn1_BackendKwetter" /o:"sythaeryn1" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          dotnet restore BackendKwetter.sln
           dotnet build BackendKwetter.sln
+          dotnet test BackendKwetter.sln
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
