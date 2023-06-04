@@ -26,6 +26,9 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
       working-directory: UserService
+    - name: Restore dependencies test
+      run: dotnet restore
+      working-directory: UserServiceTest
     - name: Test
       run: dotnet test --no-restore --verbosity normal
       working-directory: UserServiceTest
