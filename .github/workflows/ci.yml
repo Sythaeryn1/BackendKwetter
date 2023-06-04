@@ -28,5 +28,6 @@ jobs:
       working-directory: UserService
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+      working-directory: UserServiceTest
       
 
