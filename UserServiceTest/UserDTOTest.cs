@@ -2,14 +2,13 @@ using UserService.Models;
 
 namespace UserServiceTest
 {
-    [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public void TestUserDTOConstructorSuccess()
+        [Fact]
+        public void Test1()
         {
-            UserDTO userDTO = new UserDTO 
-            { 
+            UserDTO userDTO = new UserDTO
+            {
                 Id = 1,
                 Name = "Kevin",
                 Location = "Test",
@@ -23,12 +22,11 @@ namespace UserServiceTest
                 Location = "Test",
                 Bio = "Een test"
             };
-
-            Assert.IsTrue(userDTO.Id == expectedUserDTO.Id &&
+            
+            Assert.True(userDTO.Id == expectedUserDTO.Id &&
                 userDTO.Name.Equals(expectedUserDTO.Name) &&
                 userDTO.Location.Equals(expectedUserDTO.Location) &&
                 userDTO.Bio.Equals(expectedUserDTO.Bio));
-            
         }
     }
 }
