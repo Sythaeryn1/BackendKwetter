@@ -2,7 +2,7 @@ using UserService.Models;
 
 namespace UserServiceTest
 {
-    public class UnitTest1
+    public class UserDTOTest
     {
         [Fact]
         public void Test1()
