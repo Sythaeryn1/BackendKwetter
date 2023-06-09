@@ -31,6 +31,13 @@ namespace UserService.Controllers
             return await _context.Users.Select(x => UserToDTO(x)).ToListAsync();
         }
 
+        [HttpGet("kubernetes")]
+        public ActionResult GetKubernetes()
+        {
+            return Ok("Endpoint for kubernetes reached");
+        }
+
+
         // GET: api/Users/5
         [HttpGet("{id}")]
         public async Task<ActionResult<UserDTO>> GetUser(long id)
